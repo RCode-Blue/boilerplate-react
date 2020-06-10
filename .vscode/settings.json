@@ -1,0 +1,48 @@
+{
+  // GLOBAL
+  "semi": true,
+
+  // EMMET
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+
+  // EDITOR
+  "editor.snippetSuggestions": "top",
+
+  // BRACKET PAIR COLORIZER 2
+  "bracket-pair-colorizer-2.forceIterationColorCycle": true,
+  "bracket-pair-colorizer-2.colorMode": "Consecutive",
+  "bracket-pair-colorizer-2.highlightActiveScope": true,
+  "bracket-pair-colorizer-2.showVerticalScopeLine": true,
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": true,
+  "bracket-pair-colorizer-2.colors": [
+    // LIGHT THEME COLORS
+    // -----------------
+    "darkred",
+    "darkorange",
+    "orangered",
+    "darkkhaki",
+    "darkgreen",
+    "blue",
+    "purple",
+    "deeppink",
+    "darkslategray",
+    "saddlebrown"
+
+    // DARK THEME COLOURS
+    // ------------------
+    // "lightsalmon",
+    // "gold",
+    // "peachpuff",
+    // "chartreuse",
+    // "mediumslateblue",
+    // "lightblue",
+    // "thistle",
+    // "fuchsia",
+    // "pink",
+    // "honeydew",
+    // "blanchedalmond"
+  ]
+}
