@@ -86,6 +86,15 @@ It has config files for Editor Config, ESLint and Prettier
 npm install -–save-dev eslint eslint-plugin-react
 ```
 
+where:
+
+| Library              | Description / Link                      |
+| -------------------- | --------------------------------------- |
+| eslint:              | Linting                                 |
+|                      | _[homepage](https://eslint.org/)_       |
+| eslint-plugin-react: | React-specific linting rules for eslint |
+|                      | _[link](eslint-plugin-react)_           |
+
 <br/><br/>
 
 ### 3. Edit ESLint Configuration
@@ -182,9 +191,9 @@ where:
 | Library | Description / Link |
 | ------------------- | -------------------- |
 | webpack: | Webpack core library |
-| | _[link]()_ |
-| webpack-dev-server: | Webpack core library |
-| | _[link]()_ |
+| | _[homepage](https://webpack.js.org/)_ |
+| webpack-dev-server: | Development server for Webpack that provides live reloading and other utilities |
+| | _[link](https://www.npmjs.com/package/webpack-dev-server)_ |
 
 <br/><br/>
 
@@ -260,6 +269,16 @@ entry: {
 ```
 npm install react react-dom
 ```
+
+where:
+| Library | Description / Link |
+| ------------------- | -------------------- |
+| react: | React library |
+| | _[homepage](https://reactjs.org/)_ |
+| react-dom: | Serves as the entry point to the DOM and server renderers for React |
+| | _[link](https://www.npmjs.com/package/react-dom)_ |
+
+<br/><br/>
 
 ### 2. Create React files
 
@@ -484,7 +503,7 @@ npm install --save-dev mini-css-extract-plugin
 
 where:
 | Library | Description / Link |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------- | ------------------ |
 | style-loader: | Injects CSS into the `<style>` tag of the HTML document |
 | | _[link](https://webpack.js.org/loaders/style-loader/)_ |
 | mini-css-extract-plugin: | Extracts and creates a separate CSS file for each JS file. <br/> Supports CSS On-Demand-Loading and SourceMaps <br/> Replaces [extract-text-webpack-plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) |
@@ -540,6 +559,16 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 ```
 npm install –save-dev  node-sass sass-loader
 ```
+
+where:
+| Library | Description / Link |
+| ------- | ------------------ |
+| node-sass: | |
+| | _[link](https://github.com/sass/node-sass)_ \| _[npm](https://www.npmjs.com/package/node-sass)_ |
+| sass-loader: | |
+| | _[link](https://github.com/webpack-contrib/sass-loader)_ \| _[npm](https://www.npmjs.com/package/sass-loader)_ |
+
+<br/>
 
 `webpack.config.js:`
 
