@@ -3,59 +3,62 @@
 ## Contents
 
 - [JavaScript from Scratch](#javascript-from-scratch)
+
   - [Contents](#contents)
-    - [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images)
-- [Part 1: Basic React Setup](#part-1-basic-react-setup)
-  - [Step 1: Use this template](#step-1-use-this-template)
-    - [1. Initialise NPM](#1-initialise-npm)
-    - [2. Install the eslint plugin](#2-install-the-eslint-plugin)
-    - [3. Edit ESLint Configuration](#3-edit-eslint-configuration)
-  - [Step 2: Install and Configure Babel](#step-2-install-and-configure-babel)
-    - [1. Install Babel core and loader](#1-install-babel-core-and-loader)
-    - [2. Install Babel presets](#2-install-babel-presets)
-    - [2. Configure Babel](#2-configure-babel)
-  - [Step 3: Install and Configure Webpack](#step-3-install-and-configure-webpack)
-    - [1. Install Webpack](#1-install-webpack)
-    - [2. Configure Webpack](#2-configure-webpack)
-  - [Step 3: Set up React](#step-3-set-up-react)
-    - [1. Install React](#1-install-react)
-    - [2. Create React files](#2-create-react-files)
-    - [3. Setup basic React](#3-setup-basic-react)
-    - [4. Final React configurations](#4-final-react-configurations)
-    - [5. Test the Basic React webpage](#5-test-the-basic-react-webpage)
-    - [6. Further configurations](#6-further-configurations)
-- [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images-1)
-  - [Step 1. Set up CSS](#step-1-set-up-css)
-    - [1. Setup CSS Loader](#1-setup-css-loader)
-    - [2a. Configurations if using just CSS](#2a-configurations-if-using-just-css)
-    - [2b. Configurations if using SASS](#2b-configurations-if-using-sass)
-  - [Step 2: Basic Express Server Setup](#step-2-basic-express-server-setup)
-  - [Further Reading](#further-reading)
-    - [Babel:](#babel)
-    - [CSS:](#css)
-    - [ECMAScript:](#ecmascript)
-    - [Express:](#express)
-    - [React:](#react)
-    - [Webpack:](#webpack)
 
-### [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images)
+    - [Part 1: Basic React Setup](#part-1-basic-react-setup)
 
-- [Step 1. Set up CSS](#step-1-set-up-css)
-  - [1. Setup CSS Loader](#1-setup-css-loader)
-  - [2a. Configurations if using just CSS](#2a-configurations-if-using-just-css)
-  - [2b. Configurations if using SASS](#2b-configurations-if-using-sass)
-- [Step 2: Basic Express Server Setup](#step-2-basic-express-server-setup)
-- [Further Reading](#further-reading)
-  - [Babel:](#babel)
-  - [CSS:](#css)
-  - [ECMAScript:](#ecmascript)
-  - [Express:](#express)
-  - [React:](#react)
-  - [Webpack:](#webpack)
+      - [Step 1: Use this template](#step-1-use-this-template)
+        - [1. Initialise NPM](#1-initialise-npm)
+        - [2. Install the eslint plugin](#2-install-the-eslint-plugin)
+        - [3. Edit ESLint Configuration](#3-edit-eslint-configuration)
+      - [Step 2: Install and Configure Babel](#step-2-install-and-configure-babel)
+        - [1. Install Babel core and loader](#1-install-babel-core-and-loader)
+        - [2. Install Babel presets](#2-install-babel-presets)
+        - [2. Configure Babel](#2-configure-babel)
+      - [Step 3: Install and Configure Webpack](#step-3-install-and-configure-webpack)
+        - [1. Install Webpack](#1-install-webpack)
+        - [2. Configure Webpack](#2-configure-webpack)
+      - [Step 3: Set up React](#step-3-set-up-react)
+        - [1. Install React](#1-install-react)
+        - [2. Create React files](#2-create-react-files)
+        - [3. Setup basic React](#3-setup-basic-react)
+        - [4. Final React configurations](#4-final-react-configurations)
+        - [5. Test the Basic React webpage](#5-test-the-basic-react-webpage)
+        - [6. Further configurations](#6-further-configurations)
 
-[Part 3: Configure Styling and Images](#part-3-configure-styling-and-images)
+    - [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images-1)
+      - [Step 1. Set up CSS](#step-1-set-up-css)
+        - [1. Setup CSS Loader](#1-setup-css-loader)
+        - [2a. Configurations if using just CSS](#2a-configurations-if-using-just-css)
+        - [2b. Configurations if using SASS](#2b-configurations-if-using-sass)
+      - [Step 2: Basic Express Server Setup](#step-2-basic-express-server-setup)
+      - [Further Reading](#further-reading)
+        - [Babel:](#babel)
+        - [CSS:](#css)
+        - [ECMAScript:](#ecmascript)
+        - [Express:](#express)
+        - [React:](#react)
+        - [Webpack:](#webpack)
 
-[Further Reading](#further-reading)
+    ### [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images)
+
+    - [Step 1. Set up CSS](#step-1-set-up-css)
+      - [1. Setup CSS Loader](#1-setup-css-loader)
+      - [2a. Configurations if using just CSS](#2a-configurations-if-using-just-css)
+      - [2b. Configurations if using SASS](#2b-configurations-if-using-sass)
+    - [Step 2: Basic Express Server Setup](#step-2-basic-express-server-setup)
+    - [Further Reading](#further-reading)
+      - [Babel:](#babel)
+      - [CSS:](#css)
+      - [ECMAScript:](#ecmascript)
+      - [Express:](#express)
+      - [React:](#react)
+      - [Webpack:](#webpack)
+
+    [Part 3: Configure Styling and Images](#part-3-configure-styling-and-images)
+
+    [Further Reading](#further-reading)
 
 <br/><br/><br/>
 
@@ -120,7 +123,7 @@ More details _[here](https://github.com/yannickcr/eslint-plugin-react#recommende
 ### 1. Install Babel core and loader
 
 ```
-npm install --save-dev @babel/core babel-loader
+npm install --save-dev @babel/core@7.11.6 babel-loader@8.1.0
 ```
 
 where:
@@ -136,7 +139,7 @@ where:
 ### 2. Install Babel presets
 
 ```
-npm install --save-dev @babel/preset-env @babel/preset-react
+npm install --save-dev @babel/preset-env@7.11.5 @babel/preset-react@7.10.4
 ```
 
 where:
@@ -171,6 +174,7 @@ where:
 ```
 <project_root>
 |-- .babelrc
+|-- .eslintrc.json
 |-- package.json
 
 ```
@@ -184,12 +188,12 @@ where:
 ### 1. Install Webpack
 
 ```
-npm install --save-dev webpack webpack-cli webpack-dev-server rimraf
+npm install --save-dev webpack@.44.1 webpack-cli@3.3.12 webpack-dev-server@3.11.0 rimraf
 ```
 
 where:
 | Library | Description / Link |
-| ------------------- | -------------------- |
+| ------------------- | ------------------------------------------------------------------------------- |
 | webpack: | Webpack core library |
 | | _[homepage](https://webpack.js.org/)_ |
 | webpack-dev-server: | Development server for Webpack that provides live reloading and other utilities |
@@ -214,7 +218,7 @@ var config = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[chunkhash].js",
+    filename: "[name].js",
     publicPath: "dist/",
   },
 };
@@ -267,12 +271,12 @@ entry: {
 ### 1. Install React
 
 ```
-npm install react react-dom
+npm install react@16.13.1 react-dom@16.13.1
 ```
 
 where:
 | Library | Description / Link |
-| ------------------- | -------------------- |
+| ---------- | ------------------------------------------------------------------- |
 | react: | React library |
 | | _[homepage](https://reactjs.org/)_ |
 | react-dom: | Serves as the entry point to the DOM and server renderers for React |
@@ -282,7 +286,8 @@ where:
 
 ### 2. Create React files
 
-- In project root, create `src` directory, then create `index.js`, `app.js` and `index.html` inside that.
+- In project root, create `src` directory, then create `index.js`, `app.js` inside that.
+- Also in project root, create a directory named `public` and create `index.html` inside that.
 
 Folder structure:
 
@@ -291,17 +296,18 @@ Folder structure:
 |-- .babelrc
 |-- package.json
 |-- webpack.config.js
+|-- public
+  |-- index.html
 |-- src
-    |-- app.js
-    |-- index.html
-    |-- index.js
+  |-- app.js
+  |-- index.js
 ```
 
 ### 3. Setup basic React
 
 - Setup HTML file,...
 
-`src/index.html:`
+`public/index.html:`
 
 ```html
 <!DOCTYPE html>
@@ -429,7 +435,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
   ...
 plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: "public/index.html",
     }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
@@ -457,6 +463,8 @@ output: {
 Browse to _[http://localhost:3001](http://localhost:3001)_
 
 You should see "Hello World" displayed on your browser
+
+Also, if you open `dist/index.html` directly in your browser, you will see the same webpage displayed
 
 <br/><br/>
 
@@ -503,7 +511,7 @@ npm install --save-dev mini-css-extract-plugin
 
 where:
 | Library | Description / Link |
-| ------- | ------------------ |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | style-loader: | Injects CSS into the `<style>` tag of the HTML document |
 | | _[link](https://webpack.js.org/loaders/style-loader/)_ |
 | mini-css-extract-plugin: | Extracts and creates a separate CSS file for each JS file. <br/> Supports CSS On-Demand-Loading and SourceMaps <br/> Replaces [extract-text-webpack-plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) |
@@ -562,7 +570,7 @@ npm install –save-dev  node-sass sass-loader
 
 where:
 | Library | Description / Link |
-| ------- | ------------------ |
+| ------------ | -------------------------------------------------------------------------------------------------------------- |
 | node-sass: | |
 | | _[link](https://github.com/sass/node-sass)_ \| _[npm](https://www.npmjs.com/package/node-sass)_ |
 | sass-loader: | |
