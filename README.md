@@ -2,10 +2,9 @@
 
 ## Contents
 
-[Part 1: Basics](#part-1-basics)
-
 - [JavaScript from Scratch](#javascript-from-scratch)
   - [Contents](#contents)
+    - [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images)
 - [Part 1: Basic React Setup](#part-1-basic-react-setup)
   - [Step 1: Use this template](#step-1-use-this-template)
     - [1. Initialise NPM](#1-initialise-npm)
@@ -25,10 +24,11 @@
     - [4. Final React configurations](#4-final-react-configurations)
     - [5. Test the Basic React webpage](#5-test-the-basic-react-webpage)
     - [6. Further configurations](#6-further-configurations)
-- [Part 3: Configure Styling and Images](#part-3-configure-styling-and-images)
+- [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images-1)
   - [Step 1. Set up CSS](#step-1-set-up-css)
     - [1. Setup CSS Loader](#1-setup-css-loader)
     - [2a. Configurations if using just CSS](#2a-configurations-if-using-just-css)
+    - [2b. Configurations if using SASS](#2b-configurations-if-using-sass)
   - [Step 2: Basic Express Server Setup](#step-2-basic-express-server-setup)
   - [Further Reading](#further-reading)
     - [Babel:](#babel)
@@ -37,6 +37,21 @@
     - [Express:](#express)
     - [React:](#react)
     - [Webpack:](#webpack)
+
+### [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images)
+
+- [Step 1. Set up CSS](#step-1-set-up-css)
+  - [1. Setup CSS Loader](#1-setup-css-loader)
+  - [2a. Configurations if using just CSS](#2a-configurations-if-using-just-css)
+  - [2b. Configurations if using SASS](#2b-configurations-if-using-sass)
+- [Step 2: Basic Express Server Setup](#step-2-basic-express-server-setup)
+- [Further Reading](#further-reading)
+  - [Babel:](#babel)
+  - [CSS:](#css)
+  - [ECMAScript:](#ecmascript)
+  - [Express:](#express)
+  - [React:](#react)
+  - [Webpack:](#webpack)
 
 [Part 3: Configure Styling and Images](#part-3-configure-styling-and-images)
 
@@ -100,12 +115,12 @@ npm install --save-dev @babel/core babel-loader
 ```
 
 where:
-| Library       | Description / Link                                     |
+| Library | Description / Link |
 | ------------- | ------------------------------------------------------ |
-| @babe-core:   | Babel core library (does nothing on its own)           |
-|               | _[link](https://babeljs.io/docs/en/6.26.3/babel-core)_ |
-| babel-loader: | Lets Webpack talk to Babel                             |
-|               | _[homepage](https://github.com/babel/babel-loader)_    |
+| @babe-core: | Babel core library (does nothing on its own) |
+| | _[link](https://babeljs.io/docs/en/6.26.3/babel-core)_ |
+| babel-loader: | Lets Webpack talk to Babel |
+| | _[homepage](https://github.com/babel/babel-loader)_ |
 
 <br/>
 
@@ -116,12 +131,12 @@ npm install --save-dev @babel/preset-env @babel/preset-react
 ```
 
 where:
-| Library              | Description / Link                                             |
+| Library | Description / Link |
 | -------------------- | -------------------------------------------------------------- |
-| @babel-preset-env:   | Babel preset for all ES6 plugins                               |
-|                      | _[link](https://babeljs.io/docs/en/6.26.3/babel-preset-env)_   |
-| @babel-preset-react: | Babel preset for React                                         |
-|                      | _[link](https://babeljs.io/docs/en/6.26.3/babel-preset-react)_ |
+| @babel-preset-env: | Babel preset for all ES6 plugins |
+| | _[link](https://babeljs.io/docs/en/6.26.3/babel-preset-env)_ |
+| @babel-preset-react: | Babel preset for React |
+| | _[link](https://babeljs.io/docs/en/6.26.3/babel-preset-react)_ |
 
 <br/><br/>
 
@@ -164,12 +179,12 @@ npm install --save-dev webpack webpack-cli webpack-dev-server rimraf
 ```
 
 where:
-| Library             | Description / Link   |
+| Library | Description / Link |
 | ------------------- | -------------------- |
-| webpack:            | Webpack core library |
-|                     | _[link]()_           |
+| webpack: | Webpack core library |
+| | _[link]()_ |
 | webpack-dev-server: | Webpack core library |
-|                     | _[link]()_           |
+| | _[link]()_ |
 
 <br/><br/>
 
@@ -426,7 +441,7 @@ You should see "Hello World" displayed on your browser
 
 <br/><br/>
 
-# Part 3: Configure Styling and Images
+# Part 2: Configure Styling and Images
 
 ## Step 1. Set up CSS
 
@@ -439,10 +454,10 @@ npm install -–save-dev css-loader
 ```
 
 where:
-| Library     | Description / Link                                                                 |
+| Library | Description / Link |
 | ----------- | ---------------------------------------------------------------------------------- |
 | css-loader: | Enables Webpack to import and parse CSS files. <br/> Does not do anything with it. |
-|             | _[link](https://webpack.js.org/loaders/css-loader/)_                               |
+| | _[link](https://webpack.js.org/loaders/css-loader/)_ |
 
 `webpack.config.js:`
 
@@ -468,12 +483,12 @@ npm install --save-dev mini-css-extract-plugin
 ```
 
 where:
-| Library                  | Description / Link                                                                                                                                                                                                     |
+| Library | Description / Link |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| style-loader:            | Injects CSS into the `<style>` tag of the HTML document                                                                                                                                                                |
-|                          | _[link](https://webpack.js.org/loaders/style-loader/)_                                                                                                                                                                 |
+| style-loader: | Injects CSS into the `<style>` tag of the HTML document |
+| | _[link](https://webpack.js.org/loaders/style-loader/)_ |
 | mini-css-extract-plugin: | Extracts and creates a separate CSS file for each JS file. <br/> Supports CSS On-Demand-Loading and SourceMaps <br/> Replaces [extract-text-webpack-plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) |
-|                          | _[link](https://webpack.js.org/plugins/mini-css-extract-plugin/)_                                                                                                                                                      |
+| | _[link](https://webpack.js.org/plugins/mini-css-extract-plugin/)_ |
 
 <br/>
 Configuration for style-loader:
@@ -520,7 +535,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 ```
 
-2b. Configurations if using SASS
+### 2b. Configurations if using SASS
 
 ```
 npm install –save-dev  node-sass sass-loader
