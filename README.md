@@ -26,6 +26,11 @@
         - [4. Final React configurations](#4-final-react-configurations)
         - [5. Test the Basic React webpage](#5-test-the-basic-react-webpage)
         - [6. Further configurations](#6-further-configurations)
+          - [6.1 Configure dev server settings](#6.1-configure-dev-server-settings)
+          - [6.2 Configure Code-Splitting](#6.2-configure-code-splitting)
+          - [6.3 Configure HTML](#6.3-configure-html)
+          - [6.4 Configure ChunkHash](#6.4-configure-chunkHash)
+          - [6.5 Configure Hot Module Replacement (HMR)](<#6.5-configure-hot-module-replacement-(hmr)>)
 
     - [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images-1)
       - [Step 1. Set up CSS](#step-1-set-up-css)
@@ -40,23 +45,6 @@
         - [Express:](#express)
         - [React:](#react)
         - [Webpack:](#webpack)
-
-    ### [Part 2: Configure Styling and Images](#part-2-configure-styling-and-images)
-
-    - [Step 1. Set up CSS](#step-1-set-up-css)
-      - [1. Setup CSS Loader](#1-setup-css-loader)
-      - [2a. Configurations if using just CSS](#2a-configurations-if-using-just-css)
-      - [2b. Configurations if using SASS](#2b-configurations-if-using-sass)
-    - [Step 2: Basic Express Server Setup](#step-2-basic-express-server-setup)
-    - [Further Reading](#further-reading)
-      - [Babel:](#babel)
-      - [CSS:](#css)
-      - [ECMAScript:](#ecmascript)
-      - [Express:](#express)
-      - [React:](#react)
-      - [Webpack:](#webpack)
-
-    [Part 3: Configure Styling and Images](#part-3-configure-styling-and-images)
 
     [Further Reading](#further-reading)
 
@@ -128,7 +116,7 @@ npm install --save-dev @babel/core@7.11.6 babel-loader@8.1.0
 
 where:
 | Library | Description / Link |
-| ------------- | ------------------------------------------------------ |
+| ------------- | ------------ |
 | @babe-core: | Babel core library (does nothing on its own) |
 | | _[link](https://babeljs.io/docs/en/6.26.3/babel-core)_ |
 | babel-loader: | Lets Webpack talk to Babel |
@@ -144,7 +132,7 @@ npm install --save-dev @babel/preset-env@7.11.5 @babel/preset-react@7.10.4
 
 where:
 | Library | Description / Link |
-| -------------------- | -------------------------------------------------------------- |
+| -------------------- | ------------ |
 | @babel-preset-env: | Babel preset for all ES6 plugins |
 | | _[link](https://babeljs.io/docs/en/6.26.3/babel-preset-env)_ |
 | @babel-preset-react: | Babel preset for React |
@@ -193,7 +181,7 @@ npm install --save-dev webpack@.44.1 webpack-cli@3.3.12 webpack-dev-server@3.11.
 
 where:
 | Library | Description / Link |
-| ------------------- | ------------------------------------------------------------------------------- |
+| ------------------- | ------------ |
 | webpack: | Webpack core library |
 | | _[homepage](https://webpack.js.org/)_ |
 | webpack-dev-server: | Development server for Webpack that provides live reloading and other utilities |
@@ -276,7 +264,7 @@ npm install react@16.13.1 react-dom@16.13.1
 
 where:
 | Library | Description / Link |
-| ---------- | ------------------------------------------------------------------- |
+| ---------- | ------------ |
 | react: | React library |
 | | _[homepage](https://reactjs.org/)_ |
 | react-dom: | Serves as the entry point to the DOM and server renderers for React |
@@ -339,10 +327,19 @@ ReactDOM.render(<App />, document.getElementById("root"));
 ```js
 import React from "react";
 
+const greeting = (firstname, lastname) => {
+  return (
+    <p>
+      My name is {firstname} {lastname}
+    </p>
+  );
+};
+
 function App() {
   return (
     <div className="App">
-      <h2>Hello World</h2>
+      <h2>Hello! World!</h2>
+      {greeting("John", "Smith")}
     </div>
   );
 }
@@ -398,7 +395,9 @@ You should see a `dist` folder in the project root containing files.
 
 ### 6. Further configurations
 
-- Configure dev server settings
+<br/>
+
+#### 6.1 Configure dev server settings
 
 `webpack.config.js`
 
@@ -408,7 +407,9 @@ devServer: {
   },
 ```
 
-- Configure Code-Slitting
+<br/>
+
+#### 6.2 Configure Code-Splitting
 
 `webpack.config.js`
 
@@ -420,9 +421,11 @@ optimization: {
 },
 ```
 
-- Configure HTML
+<br/>
 
-Install HTMLWebpackPlugin
+#### 6.3 Configure HTML
+
+Install `HTMLWebpackPlugin`
 
 ```bash
 npm install --save-dev html-webpack-plugin
@@ -443,7 +446,9 @@ plugins: [
   ],
 ```
 
-- Configure ChunkHash
+<br/>
+
+#### 6.4 Configure ChunkHash
 
 `webpack.config.js`
 
@@ -452,6 +457,43 @@ output: {
     path: path.resolve(__dirname, "dist/"),
     filename: "[name].[chunkhash].js",
   },
+```
+
+<br/>
+
+#### 6.5 Configure Hot Module Replacement (HMR)
+
+Install `react-hot-loader`:
+
+```bash
+npm install --save react-hot-loader
+```
+
+where:
+| Library | Description / Link |
+| ---------- | ------------ |
+| react-hot-loader: | Enables automatic development server refresh on file change |
+| | _[homepage](<[react-hot-loader](https://github.com/gaearon/react-hot-loader)>)_ |
+
+Make changes to webpack configuration:
+
+`webpack.config.js`
+
+```js
+devServer: {
+  hot: true,
+},
+
+```
+
+Please note that the configuration for `ChunkHash` will have to change to the following, or there will be errors:
+
+`webpack.config.js`
+
+```js
+output: {
+  filename: "[name].[hash]-[id].js",
+},
 ```
 
 - Run the dev server
@@ -482,7 +524,7 @@ npm install -–save-dev css-loader
 
 where:
 | Library | Description / Link |
-| ----------- | ---------------------------------------------------------------------------------- |
+| ----------- | ------------ |
 | css-loader: | Enables Webpack to import and parse CSS files. <br/> Does not do anything with it. |
 | | _[link](https://webpack.js.org/loaders/css-loader/)_ |
 
@@ -499,26 +541,23 @@ module: {
 }
 ```
 
-### 2a. Configurations if using just CSS
+### 2a. Pure CSS Configuration: style-loader
 
-Choose one of the following:
+Install style-loader:
 
 ```bash
 npm install –-save-dev style-loader
-
-npm install --save-dev mini-css-extract-plugin
 ```
 
 where:
 | Library | Description / Link |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------ | ----------- |
 | style-loader: | Injects CSS into the `<style>` tag of the HTML document |
 | | _[link](https://webpack.js.org/loaders/style-loader/)_ |
-| mini-css-extract-plugin: | Extracts and creates a separate CSS file for each JS file. <br/> Supports CSS On-Demand-Loading and SourceMaps <br/> Replaces [extract-text-webpack-plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) |
-| | _[link](https://webpack.js.org/plugins/mini-css-extract-plugin/)_ |
 
 <br/>
-Configuration for style-loader:
+
+Webpack configuration:
 
 `webpack.config.js:`
 
@@ -529,12 +568,27 @@ module: {
       use: ["style-loader", "css-loader"], //note the sequence!
       test: /\.css$/,
     },
-  ];
+  ],
 }
 ```
 
+### 2b. Pure CSS Configuration: mini-css-extract-plugin
+
+Install mini-css-extract-plugin:
+
+```bash
+npm install --save-dev mini-css-extract-plugin
+```
+
+where:
+| Library | Description / Link |
+| ------------ | ----------- |
+| mini-css-extract-plugin: | Extracts and creates a separate CSS file for each JS file. <br/> Supports CSS On-Demand-Loading and SourceMaps. <br/> Replaces [extract-text-webpack-plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) |
+| | _[link](https://webpack.js.org/plugins/mini-css-extract-plugin/)_ |
+
 <br/>
-Configuration for mini-css-extract-plugin:
+
+Webpack configuration:
 
 `webpack.config.js:`
 
@@ -562,7 +616,28 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 ```
 
-### 2b. Configurations if using SASS
+### 3. Add styling to the Webpage
+
+- Create root folder `styles` and `styles.css` inside that, then create some basic styling:
+
+`styles/styles.css`
+
+```css
+body {
+  color: ivory;
+  background-color: darkslategray;
+}
+```
+
+`src/app.js`
+
+```js
+import "../styles/styles.css";
+```
+
+Rebuild the webpage. You should see a change in the text and background colour.
+
+## Step 2. Configuring SASS (optional)
 
 ```
 npm install –save-dev  node-sass sass-loader
@@ -570,7 +645,7 @@ npm install –save-dev  node-sass sass-loader
 
 where:
 | Library | Description / Link |
-| ------------ | -------------------------------------------------------------------------------------------------------------- |
+| ------------ | ------------ |
 | node-sass: | |
 | | _[link](https://github.com/sass/node-sass)_ \| _[npm](https://www.npmjs.com/package/node-sass)_ |
 | sass-loader: | |
@@ -617,7 +692,13 @@ rules: [
 ]
 ```
 
-<br/><br/><br/><br/><br/>
+## Step 3. Configuring CSS Modules (optional)
+
+<br/><br/>
+
+## Part 3:
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 ## Step 2: Basic Express Server Setup
 
@@ -711,10 +792,11 @@ Browse to `http://localhost:8080`
 
 <br/>
 
-### CSS:
+### CSS / SASS / CSS Modules:
 
 - [Webpack Loaders, CSS and Style Loaders](https://medium.com/a-beginners-guide-for-webpack-2/webpack-loaders-css-and-sass-2cc0079b5b3a)
 - [What is the difference between style-loader and mini-css-extract-plugin?](https://maxrozen.com/difference-between-style-loader-mini-css-extract-plugin/)
+- [How to configure CSS and CSS modules in webpack](https://blog.jakoblind.no/css-modules-webpack/)
 
 <br/>
 
