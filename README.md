@@ -47,6 +47,7 @@
         - [Webpack:](#webpack)
 
     [Further Reading](#further-reading)
+    [Version Reference] #version-reference
 
 <br/><br/><br/>
 
@@ -1090,3 +1091,37 @@ Browse to `http://localhost:8080`
 ### Webpack:
 
 - [How to streamline your React.js development process using Webpack 4](https://medium.com/free-code-camp/how-to-develop-react-js-apps-fast-using-webpack-4-3d772db957e4)
+
+## Version Reference
+
+`package.json`:
+
+```json
+"devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.8.1",
+    "eslint-plugin-react": "^7.20.6",
+    "html-webpack-plugin": "^4.4.1",
+    "rimraf": "^3.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "axios": "^0.20.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21",
+    "uuid": "^8.3.0"
+  }
+```
