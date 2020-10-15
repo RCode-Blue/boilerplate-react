@@ -412,7 +412,7 @@ You should see a `dist` folder in the project root containing files.
 ```js
 devServer: {
   publicPath: "/",
-  port: 3001,
+  port: 8080,
   },
 ```
 
@@ -510,7 +510,7 @@ Make changes to webpack configuration:
 > npm run serve:dev
 ```
 
-Browse to _[http://localhost:3001](http://localhost:3001)_
+Browse to _[http://localhost:8080](http://localhost:3001)_
 
 You should see "Hello World" displayed on your browser
 
