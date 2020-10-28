@@ -1,8 +1,8 @@
-# JavaScript from Scratch
+# React from Scratch
 
 ## Contents
 
-- [JavaScript from Scratch](#javascript-from-scratch)
+- [React from Scratch](#react-from-scratch)
 
   - [Contents](#contents)
 
