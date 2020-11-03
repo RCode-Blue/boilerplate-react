@@ -75,7 +75,7 @@ It has config files for Editor Config, ESLint and Prettier
 
 <br/>
 
-```
+```bash
 npm install -–save-dev eslint eslint-plugin-react
 ```
 
