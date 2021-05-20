@@ -784,7 +784,7 @@ module.exports = () => {
 ## Step 1. Install dotenv to read `.env` files
 
 ```bash
-npm install --save-dev dotenv
+npm install --save dotenv
 ```
 
 where:

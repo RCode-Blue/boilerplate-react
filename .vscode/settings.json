@@ -7,13 +7,15 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
 
+  "editor.foldingStrategy": "indentation",
   "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.snippetSuggestions": "top",
-  "editor.suggest.maxVisibleSuggestions": 10,
+  "editor.renderWhitespace": "all",
+  "editor.suggest.showStatusBar": true,
   "editor.suggest.showWords": false,
 
   "emmet.includeLanguages": {
@@ -89,6 +91,7 @@
     "blanchedalmond",
     "snow",
     "mistyrose"
-  ]
+  ],
+  "workbench.colorTheme": "Night Owl"
 }
 // Note: VSCode user settings in /Users/<username>/Library/Application SUpport/COde/User/settings.json
